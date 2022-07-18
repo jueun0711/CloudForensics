@@ -49,22 +49,6 @@ namespace CloudForensics.ZoomModel
 				+ $"Type : {Type}\n"
 				+ $"Uuid : {Uuid}\n"
 				+ $"Duration : {Duration}\n\n";
-
-			/*Console.WriteLine("------------Meeting Information---------------");
-			Console.WriteLine($"Index / Total Meeting : {Index} / {TotalRecords}");
-			Console.WriteLine($"Topic: {Topic}");
-			Console.WriteLine($"Created On : {CreatedOn}");
-			Console.WriteLine($"Records Ids: {Id}");
-			Console.WriteLine($"Record Start Time: {StartTime}");
-			Console.WriteLine($"Agenda : {Agenda}");
-			Console.WriteLine($"HostId : {HostId}");
-			Console.WriteLine($"StartUrl : {StartUrl}");
-			Console.WriteLine($"Personal Meeting Id : {PersonalMeetingId}");
-			Console.WriteLine($"Timezone : {Timezone}");
-			Console.WriteLine($"Type : {Type}");
-			Console.WriteLine($"Uuid : {Uuid}");
-			Console.WriteLine($"Duration : {Duration}");
-			Console.WriteLine();*/
 		}
 	}
 }
