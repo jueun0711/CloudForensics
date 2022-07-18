@@ -6,11 +6,11 @@ namespace CloudForensics.ZoomModel
 {
     public class ZoomChat
     {
-		public string Id { get; set; }
+	public string Id { get; set; }
 
-		public string JId { get; set; }
+	public string JId { get; set; }
 
-		public string Name { get; set; }
+	public string Name { get; set; }
 
         public int Index { get; set; }
 
@@ -32,13 +32,6 @@ namespace CloudForensics.ZoomModel
                 + $"Type : {Type}\n"
                 + $"Chat Member # : {ChatMems.Count}\n"
                 + $"Chat Message # : {ChatMsgs.Count}\n\n";
-            /*Console.WriteLine("-------------Chat Channel Information------------");
-            Console.WriteLine($"Channel Index / Total Channel : {Index} / {TotalRecords}");
-            Console.WriteLine($"Id : {Id}");
-            Console.WriteLine($"JId : {JId}");
-            Console.WriteLine($"Name : {Name}");
-            Console.WriteLine($"Type : {Type}");
-            Console.WriteLine();*/
         }
     }
 }
