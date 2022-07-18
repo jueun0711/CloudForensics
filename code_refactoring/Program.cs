@@ -25,9 +25,9 @@ namespace CloudForensics
             var recordings = zoom.GetRecordings(from: id).Result;
             var chatList = zoom.GetChatList(from: id).Result;
 
-            //Console.WriteLine($"{user}");
+            Console.WriteLine($"{user}");
             for (int i = 0; i < meetings.Count; i++) { Console.WriteLine($"{meetings[i]}"); }
-            /*for (int i = 0; i < pastMeetings.Count; i++) { Console.WriteLine($"{pastMeetings[i]}"); }
+            for (int i = 0; i < pastMeetings.Count; i++) { Console.WriteLine($"{pastMeetings[i]}"); }
             for (int i = 0; i < recordings.Count; i++) { Console.WriteLine($"{recordings[i]}"); }
             for (int i = 0; i < chatList.Count; i++)
             {
@@ -40,7 +40,7 @@ namespace CloudForensics
                 {
                     Console.WriteLine($"{chatList[i].ChatMsgs[j]}");
                 }
-            }*/
+            }
 
             Console.ReadKey();
         }
