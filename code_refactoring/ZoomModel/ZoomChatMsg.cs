@@ -11,7 +11,7 @@ namespace CloudForensics.ZoomModel
 
 	public DateTime SentOn { get; set; }
 
-		public long Timestamp { get; set; }
+	public long Timestamp { get; set; }
 
         public int Index { get; set; }
 
