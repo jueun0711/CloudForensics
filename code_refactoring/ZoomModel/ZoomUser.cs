@@ -31,16 +31,6 @@ namespace CloudForensics.ZoomModel
                 + $"Department: {Department}\n"
                 + $"Email : {Email}\n"
                 + $"User Name : {Name}\n\n";
-            /*Console.WriteLine("---------Print User's information---------");
-            Console.WriteLine($"User Id: {Id}");
-            Console.WriteLine($"Host key : {HostKey}");
-            Console.WriteLine($"Cms UserId: {CmsUserId}");
-            Console.WriteLine($"Company : {Company}");
-            Console.WriteLine($"Created On : {CreatedOn}");
-            Console.WriteLine($"Department: {Department}");
-            Console.WriteLine($"Email : {Email}");
-            Console.WriteLine($"User Name : {Name}");
-            Console.WriteLine();*/
         }
     }
 }
