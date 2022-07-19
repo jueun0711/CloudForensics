@@ -5,13 +5,13 @@ namespace CloudForensics.ZoomModel
 {
     public class ZoomChatMem                //https://github.com/Jericho/ZoomNet/blob/develop/Source/ZoomNet/Models/ChatChannelMember.cs
     {
-		public string Id { get; set; }
+	public string Id { get; set; }
 
-		public string Email { get; set; }
+	public string Email { get; set; }
 
-		public string Name { get; set; }
+	public string Name { get; set; }
 
-		public ChatChannelRole Role { get; set; }
+	public ChatChannelRole Role { get; set; }
 
         public int Index { get; set; }
 

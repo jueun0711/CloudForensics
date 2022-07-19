@@ -41,7 +41,7 @@ namespace CloudForensics
                 {
                     Console.WriteLine($"{chatList[i].ChatMsgs[j]}");
                 }
-            }*/
+            }
 
             Console.ReadKey();
         }
