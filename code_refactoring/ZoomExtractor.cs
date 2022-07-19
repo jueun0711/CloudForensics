@@ -29,13 +29,42 @@ namespace CloudForensics
             {
                 var user = await client.Users.GetAsync(from);
                 zu.Id = user.Id;
-                zu.HostKey = user.HostKey;
-                zu.CmsUserId = user.CmsUserId;
-                zu.Company = user.Company;
                 zu.CreatedOn = user.CreatedOn;
                 zu.Department = user.Department;
                 zu.Email = user.Email;
                 zu.Name = user.FirstName + " " + user.LastName;
+                zu.LastLoginClientVersion = user.LastLoginClientVersion;
+                zu.LastLogin = user.LastLogin;
+                zu.PersonalMeetingId = user.PersonalMeetingId;
+                zu.RoleName = user.RoleName;
+                zu.Timezone = user.Timezone;
+                zu.Type = user.Type;
+                zu.UsePersonalMeetingId = user.UsePersonalMeetingId;
+                zu.AccountId = user.AccountId;
+                zu.AccountNumber = user.AccountNumber;
+                zu.CmsUserId = user.CmsUserId;
+                zu.Company = user.Company;
+                zu.CustomAttributes = user.CustomAttributes;
+                zu.EmployeeId = user.EmployeeId;
+                zu.GroupIds = user.GroupIds;
+                zu.HostKey = user.HostKey;
+                zu.ImGroupIds = user.ImGroupIds;
+                zu.JId = user.JId;
+                zu.JobTitle = user.JobTitle;
+                zu.Language = user.Language;
+                zu.Location = user.Location;
+                zu.LoginType = user.LoginType;
+                zu.Manager = user.Manager;
+                zu.PersonalMeetingUrl = user.PersonalMeetingUrl;
+                zu.PhoneNumbers = user.PhoneNumbers;
+                zu.ProfilePictureUrl = user.ProfilePictureUrl;
+                zu.UnitedPlanType = user.UnitedPlanType;
+                zu.Pronouns = user.Pronouns;
+                zu.PronounsDisplay = user.PronounsDisplay;
+                zu.RoleId = user.RoleId;
+                zu.Status = user.Status;
+                zu.VanityUrl = user.VanityUrl;
+                zu.IsVerified = user.IsVerified;
             }
 
             return zu;
@@ -83,12 +112,23 @@ namespace CloudForensics
                 {
                     var pastMeeting = await client.PastMeetings.GetAsync(getUuid.Records[i].Uuid); // input uuid
                     var zp = new ZoomPastMeeting();
-                    zp.Topic = pastMeeting.Topic;
+
+                    zp.Uuid = pastMeeting.Uuid;
                     zp.Id = pastMeeting.Id;
                     zp.HostId = pastMeeting.HostId;
-                    zp.Uuid = pastMeeting.Uuid;
+                    zp.Topic = pastMeeting.Topic;
                     zp.Type = pastMeeting.Type;
+                    zp.Status = pastMeeting.Status;
+                    zp.Agenda = pastMeeting.Agenda;
                     zp.CreatedOn = pastMeeting.CreatedOn;
+                    zp.StartUrl = pastMeeting.StartUrl;
+                    zp.JoinUrl = pastMeeting.JoinUrl;
+                    zp.Password = pastMeeting.Password;
+                    zp.H323Password = pastMeeting.H323Password;
+                    zp.PstnPassword = pastMeeting.PstnPassword;
+                    zp.Settings = pastMeeting.Settings;
+                    zp.Index = i + 1;
+                    zp.TotalRecords = getUuid.Records.Length;
                     zpList.Add(zp);
                 }
             }
@@ -107,16 +147,19 @@ namespace CloudForensics
                     var zr = new ZoomRecording();
                     zr.Index = i + 1;
                     zr.TotalRecords = recording.Records.Length;
-                    zr.Topic = recording.Records[i].Topic;
+                    zr.Uuid = recording.Records[i].Uuid;
                     zr.Id = recording.Records[i].Id;
                     zr.AccountId = recording.Records[i].AccountId;
-                    zr.Uuid = recording.Records[i].Uuid;
                     zr.HostId = recording.Records[i].HostId;
+                    zr.Topic = recording.Records[i].Topic;
                     zr.StartTime = recording.Records[i].StartTime;
                     zr.Duration = recording.Records[i].Duration;
-                    zr.ShareUrl = recording.Records[i].ShareUrl;
                     zr.TotalSize = recording.Records[i].TotalSize;
                     zr.FilesCount = recording.Records[i].FilesCount;
+                    zr.RecordingFiles = recording.Records[i].RecordingFiles;
+                    zr.ShareUrl = recording.Records[i].ShareUrl;
+                    zr.Password = recording.Records[i].Password;
+                    zr.ParticipantAudioFiles = recording.Records[i].ParticipantAudioFiles;
                     zrList.Add(zr);
                 }
             }
@@ -140,6 +183,7 @@ namespace CloudForensics
                     zc.JId = chat.Records[i].JId;
                     zc.Name = chat.Records[i].Name;
                     zc.Type = chat.Records[i].Type;
+                    zc.Settings = chat.Records[i].Settings;
                     zc.Index = i + 1;
                     zc.TotalRecords = chat.Records.Length;
                     zc.ChatMems = getChatMems(from, chat.Records[i].Id).Result;
