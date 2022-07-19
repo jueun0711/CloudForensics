@@ -3,8 +3,8 @@ using ZoomNet.Models;
 
 namespace CloudForensics.ZoomModel
 {
-    public class ZoomMeeting
-    {
+    public class ZoomMeeting            //https://github.com/Jericho/ZoomNet/blob/develop/Source/ZoomNet/Models/MeetingSummary.cs
+	{
 		public string Agenda { get; set; }
 
 		public DateTime CreatedOn { get; set; }
@@ -14,10 +14,6 @@ namespace CloudForensics.ZoomModel
 		public string HostId { get; set; }
 
 		public long Id { get; set; }
-
-		public int Index { get; set; }
-
-		public int TotalRecords { get; set; }
 
 		public string StartUrl { get; set; }
 
@@ -33,38 +29,26 @@ namespace CloudForensics.ZoomModel
 
 		public string Uuid { get; set; }
 
+		public int Index { get; set; }
+
+		public int TotalRecords { get; set; }
+
 		public override string ToString()
 		{
 			return "------------Meeting Information---------------\n"
 				+ $"Index / Total Meeting : {Index} / {TotalRecords}\n"
 				+ $"Topic: {Topic}\n"
 				+ $"Created On : {CreatedOn}\n"
-				+ $"Records Ids: {Id}\n"
-				+ $"Record Start Time: {StartTime}\n"
-				//+ $"Agenda : {Agenda}\n"
+				+ $"Ids: {Id}\n"
+				+ $"Start Time: {StartTime}\n"
 				+ $"HostId : {HostId}\n"
-				//+ $"StartUrl : {StartUrl}\n"
-				//+ $"Personal Meeting Id : {PersonalMeetingId}\n"
 				+ $"Timezone : {Timezone}\n"
 				+ $"Type : {Type}\n"
 				+ $"Uuid : {Uuid}\n"
 				+ $"Duration : {Duration}\n\n";
-
-			/*Console.WriteLine("------------Meeting Information---------------");
-			Console.WriteLine($"Index / Total Meeting : {Index} / {TotalRecords}");
-			Console.WriteLine($"Topic: {Topic}");
-			Console.WriteLine($"Created On : {CreatedOn}");
-			Console.WriteLine($"Records Ids: {Id}");
-			Console.WriteLine($"Record Start Time: {StartTime}");
-			Console.WriteLine($"Agenda : {Agenda}");
-			Console.WriteLine($"HostId : {HostId}");
-			Console.WriteLine($"StartUrl : {StartUrl}");
-			Console.WriteLine($"Personal Meeting Id : {PersonalMeetingId}");
-			Console.WriteLine($"Timezone : {Timezone}");
-			Console.WriteLine($"Type : {Type}");
-			Console.WriteLine($"Uuid : {Uuid}");
-			Console.WriteLine($"Duration : {Duration}");
-			Console.WriteLine();*/
+				//+ $"Agenda : {Agenda}\n"
+				//+ $"StartUrl : {StartUrl}\n"
+				//+ $"Personal Meeting Id : {PersonalMeetingId}\n";
 		}
 	}
 }
