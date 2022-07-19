@@ -12,8 +12,8 @@ namespace CloudForensics
         private const string id = "forensics_marketing@hancom.com";
 
         //variable
-        private const string accessToken = "eyJhbGciOiJIUzUxMiIsInYiOiIyLjAiLCJraWQiOiIwY2RiOWYzYS1mNjE2LTRjOWYtOGNlMC02MzdmNDA0NDA3N2QifQ.eyJ2ZXIiOjcsImF1aWQiOiI1Yzg0NjljMmNmNTRhMDNjZTc4NTQxOGNhOGVmYTFjNCIsImNvZGUiOiJaMThkZzV2akFrX2tWNXZjZ1RFUmdpNlFzdUtobkhzX3ciLCJpc3MiOiJ6bTpjaWQ6Mk9vNEFvcXRSaXFNdTZiSjlHSWtRdyIsImdubyI6MCwidHlwZSI6MCwidGlkIjowLCJhdWQiOiJodHRwczovL29hdXRoLnpvb20udXMiLCJ1aWQiOiJrVjV2Y2dURVJnaTZRc3VLaG5Ic193IiwibmJmIjoxNjU4MTA3ODczLCJleHAiOjE2NTgxMTE0NzMsImlhdCI6MTY1ODEwNzg3MywiYWlkIjoiWE84azhod01RZWFGYU5IX29XMjVVQSIsImp0aSI6IjgxNmE5ZjU3LWE1YzctNDM0MC1hYTk1LWVmODQzZTUxY2NlMSJ9.FvDs47lamwbUbLdx2ZIqzHaM86k69IQumd45spUzAuFT9iTRJ7p3r_R2dDwy3ARX4dvzruzViMfU71y5MZyJEw";
-        private const string refreshToken = "eyJhbGciOiJIUzUxMiIsInYiOiIyLjAiLCJraWQiOiI1ZDYxOTIwNC1jZTVmLTRjNDctYjk4Ni1lMDY4ODEwZmU3ZWMifQ.eyJ2ZXIiOjcsImF1aWQiOiI1Yzg0NjljMmNmNTRhMDNjZTc4NTQxOGNhOGVmYTFjNCIsImNvZGUiOiJaMThkZzV2akFrX2tWNXZjZ1RFUmdpNlFzdUtobkhzX3ciLCJpc3MiOiJ6bTpjaWQ6Mk9vNEFvcXRSaXFNdTZiSjlHSWtRdyIsImdubyI6MCwidHlwZSI6MSwidGlkIjowLCJhdWQiOiJodHRwczovL29hdXRoLnpvb20udXMiLCJ1aWQiOiJrVjV2Y2dURVJnaTZRc3VLaG5Ic193IiwibmJmIjoxNjU4MTA3ODczLCJleHAiOjIxMzExNDc4NzMsImlhdCI6MTY1ODEwNzg3MywiYWlkIjoiWE84azhod01RZWFGYU5IX29XMjVVQSIsImp0aSI6IjQ4ZTgwZWYzLWJjZTQtNGE1Mi1hODUwLWU1M2Q0ODAyNDU1NCJ9.DfzwFTYXk6vVuXZiVAzU3BDRYyBNAx2ttz6pA-pi3qbDchdOqOaWqx9KNqdGGZKGhuiAG72G_N_6rlttnqTyow";
+        private const string accessToken = "eyJhbGciOiJIUzUxMiIsInYiOiIyLjAiLCJraWQiOiJiMjVkYzQ3OS1iYjAxLTQxOGMtYjUzMC02NGUzMzZmZTA3YmUifQ.eyJ2ZXIiOjcsImF1aWQiOiI1Yzg0NjljMmNmNTRhMDNjZTc4NTQxOGNhOGVmYTFjNCIsImNvZGUiOiJpTFdBSHptYnVXX2tWNXZjZ1RFUmdpNlFzdUtobkhzX3ciLCJpc3MiOiJ6bTpjaWQ6Mk9vNEFvcXRSaXFNdTZiSjlHSWtRdyIsImdubyI6MCwidHlwZSI6MCwidGlkIjowLCJhdWQiOiJodHRwczovL29hdXRoLnpvb20udXMiLCJ1aWQiOiJrVjV2Y2dURVJnaTZRc3VLaG5Ic193IiwibmJmIjoxNjU4MTk0OTI1LCJleHAiOjE2NTgxOTg1MjUsImlhdCI6MTY1ODE5NDkyNSwiYWlkIjoiWE84azhod01RZWFGYU5IX29XMjVVQSIsImp0aSI6ImM4Y2M5MWJjLTcwOTYtNDBmNC1hZGRmLWNkZjZkZjk2YzA5YiJ9.1QZ2JbqmOFkM6sa2-9pb7JZp0FOES5p_BlPhDPTm9E06IffYJ6UGoJZQhIgkHwuVVTCs2CPXNZ57r64uOkOT2w";
+        private const string refreshToken = "eyJhbGciOiJIUzUxMiIsInYiOiIyLjAiLCJraWQiOiI5ZDZlMWVlNi0xZmI2LTQ5ZjctOWFmYi0xNjRjZWM2YWVlYmIifQ.eyJ2ZXIiOjcsImF1aWQiOiI1Yzg0NjljMmNmNTRhMDNjZTc4NTQxOGNhOGVmYTFjNCIsImNvZGUiOiJpTFdBSHptYnVXX2tWNXZjZ1RFUmdpNlFzdUtobkhzX3ciLCJpc3MiOiJ6bTpjaWQ6Mk9vNEFvcXRSaXFNdTZiSjlHSWtRdyIsImdubyI6MCwidHlwZSI6MSwidGlkIjowLCJhdWQiOiJodHRwczovL29hdXRoLnpvb20udXMiLCJ1aWQiOiJrVjV2Y2dURVJnaTZRc3VLaG5Ic193IiwibmJmIjoxNjU4MTk0OTI1LCJleHAiOjIxMzEyMzQ5MjUsImlhdCI6MTY1ODE5NDkyNSwiYWlkIjoiWE84azhod01RZWFGYU5IX29XMjVVQSIsImp0aSI6IjQzYTk1NmZjLThlZWMtNDg2MS1hMGJhLTMxZTgxOTQyNjFkYyJ9.x3iICQypd1A6hHS2k_8mmhXrtqJxoP2ErriJNX_7jwzxuEkdi2el-t5RRn95DOSoEcxmhrH9cfkX3tzWF8aisw";
 
         static void Main(string[] args)
         {
@@ -25,11 +25,12 @@ namespace CloudForensics
             var recordings = zoom.GetRecordings(from: id).Result;
             var chatList = zoom.GetChatList(from: id).Result;
 
+            //=================test======================
             //Console.WriteLine($"{user}");
-            for (int i = 0; i < meetings.Count; i++) { Console.WriteLine($"{meetings[i]}"); }
-            /*for (int i = 0; i < pastMeetings.Count; i++) { Console.WriteLine($"{pastMeetings[i]}"); }
+            //for (int i = 0; i < meetings.Count; i++) { Console.WriteLine($"{meetings[i]}"); }
+            //for (int i = 0; i < pastMeetings.Count; i++) { Console.WriteLine($"{pastMeetings[i]}"); }
             for (int i = 0; i < recordings.Count; i++) { Console.WriteLine($"{recordings[i]}"); }
-            for (int i = 0; i < chatList.Count; i++)
+            /*for (int i = 0; i < chatList.Count; i++)
             {
                 Console.WriteLine($"{chatList[i]}");
                 for (int j = 0; j < chatList[i].ChatMems.Count; j++)
