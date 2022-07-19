@@ -3,7 +3,7 @@ using ZoomNet.Models;
 
 namespace CloudForensics.ZoomModel
 {
-    public class ZoomChatMem
+    public class ZoomChatMem                //https://github.com/Jericho/ZoomNet/blob/develop/Source/ZoomNet/Models/ChatChannelMember.cs
     {
 		public string Id { get; set; }
 
@@ -25,14 +25,6 @@ namespace CloudForensics.ZoomModel
                 + $"Email : {Email}\n"
                 + $"Id : {Id}\n"
                 + $"Role : {Role}\n\n";
-
-            /*Console.WriteLine($"--------Print Chat Channels Member Information-------");
-            Console.WriteLine($"Member Index / Total Member : {Index} / {TotalRecords}");
-            Console.WriteLine($"Name : {Name}");
-            Console.WriteLine($"Email : {Email}");
-            Console.WriteLine($"Id : {Id}");
-            Console.WriteLine($"Role : {Role}");
-            Console.WriteLine();*/
         }
     }
 }
