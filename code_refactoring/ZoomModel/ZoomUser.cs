@@ -81,7 +81,7 @@ namespace CloudForensics.ZoomModel
 
 		public override string ToString()
         {
-			return "---------User's information---------\n"
+			return "---------User's Information---------\n"
 				+ $"User Id: {Id}\n"
 				+ $"User CreatedOn: {CreatedOn}\n"
 				+ $"User Department: {Department}\n"
