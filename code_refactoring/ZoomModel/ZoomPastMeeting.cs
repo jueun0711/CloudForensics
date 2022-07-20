@@ -38,8 +38,8 @@ namespace CloudForensics.ZoomModel
 
         public override string ToString()
         {
-            return "---------Past Meeting information---------\n"
-                + $"Index / Total Meeting : {Index} / {TotalRecords}\n"
+            return "---------Past Meeting Information---------\n"
+                + $"Past Meeting # : {Index} / {TotalRecords}\n"
                 + $"Uuid : {Uuid}\n"
                 + $"User Id: {Id}\n"
                 + $"Host key : {HostId}\n"
