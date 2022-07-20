@@ -23,13 +23,13 @@ namespace CloudForensics.ZoomModel
 
         public long FilesCount { get; set; }
 
-        public RecordingFile[] RecordingFiles { get; set; }
+        public ZoomRecordingFile[] RecordingFiles { get; set; }
 
         public string ShareUrl { get; set; }
 
         public string Password { get; set; }
 
-        public RecordingFile[] ParticipantAudioFiles { get; set; }
+        public ZoomRecordingFile[] ParticipantAudioFiles { get; set; }
 
         public int Index { get; set; }
 
@@ -37,8 +37,8 @@ namespace CloudForensics.ZoomModel
 
         public override string ToString()
         {
-            return "---------Recording information---------\n"
-                + $"Index / Total Recording : {Index} / {TotalRecords}\n"
+            return "---------Recording Information---------\n"
+                + $"Recording # : {Index} / {TotalRecords}\n"
                 + $"Topic : {Topic}\n"
                 + $"User Id: {Id}\n"
                 + $"Host Id : {HostId}\n"
