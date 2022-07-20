@@ -129,6 +129,7 @@ namespace CloudForensics
                     zp.Settings = pastMeeting.Settings;
                     zp.Index = i + 1;
                     zp.TotalRecords = getUuid.Records.Length;
+
                     zpList.Add(zp);
                 }
             }
@@ -156,15 +157,52 @@ namespace CloudForensics
                     zr.Duration = recording.Records[i].Duration;
                     zr.TotalSize = recording.Records[i].TotalSize;
                     zr.FilesCount = recording.Records[i].FilesCount;
-                    zr.RecordingFiles = recording.Records[i].RecordingFiles;
+                    zr.RecordingFiles = GetRecordingFiles(recording.Records[i].RecordingFiles);
+                    //zr.RecordingFiles = recording.Records[i].RecordingFiles;
                     zr.ShareUrl = recording.Records[i].ShareUrl;
                     zr.Password = recording.Records[i].Password;
-                    zr.ParticipantAudioFiles = recording.Records[i].ParticipantAudioFiles;
+                    zr.ParticipantAudioFiles = GetRecordingFiles(recording.Records[i].ParticipantAudioFiles);
+                    //zr.ParticipantAudioFiles = recording.Records[i].ParticipantAudioFiles;
+                    
                     zrList.Add(zr);
                 }
             }
 
             return zrList;
+        }
+
+        public ZoomRecordingFile[] GetRecordingFiles(RecordingFile[] recordingFiles)
+        {
+            if(recordingFiles != null)
+            {
+                var zfList = new ZoomRecordingFile[recordingFiles.Length];
+                using (var client = new ZoomClient(connectionInfo))
+                {
+                    for (int i = 0; i < recordingFiles.Length; i++)
+                    {
+                        var zf = new ZoomRecordingFile();
+                        zf.Index = i + 1;
+                        zf.TotalRecords = recordingFiles.Length;
+                        zf.DeleteTime = recordingFiles[i].DeleteTime;
+                        zf.DownloadUrl = recordingFiles[i].DownloadUrl;
+                        zf.EndTime = recordingFiles[i].EndTime;
+                        zf.FileType = recordingFiles[i].FileType;
+                        zf.Id = recordingFiles[i].Id;
+                        zf.MeetingId = recordingFiles[i].MeetingId;
+                        zf.PlayUrl = recordingFiles[i].PlayUrl;
+                        zf.Size = recordingFiles[i].Size;
+                        zf.StartTime = recordingFiles[i].StartTime;
+                        zf.Status = recordingFiles[i].Status;
+
+                        zfList[i] = zf;
+                    }
+                }
+                return zfList;
+            }
+            else
+            {
+                return new ZoomRecordingFile[0];
+            }
         }
 
         public async Task<List<ZoomChat>> GetChatList(string from)
