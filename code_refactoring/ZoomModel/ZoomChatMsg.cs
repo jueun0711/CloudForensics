@@ -5,13 +5,13 @@ namespace CloudForensics.ZoomModel
     public class ZoomChatMsg        //https://github.com/Jericho/ZoomNet/blob/develop/Source/ZoomNet/Models/ChatMessage.cs
     {
 
-	public string Id { get; set; }
+		public string Id { get; set; }
 
-	public string Message { get; set; }
+		public string Message { get; set; }
 
-	public DateTime SentOn { get; set; }
+		public DateTime SentOn { get; set; }
 
-	public long Timestamp { get; set; }
+		public long Timestamp { get; set; }
 
         public int Index { get; set; }
 
