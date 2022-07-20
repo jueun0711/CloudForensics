@@ -12,8 +12,8 @@ namespace CloudForensics
         private const string id = "forensics_marketing@hancom.com";
 
         //variable
-        private const string accessToken = "eyJhbGciOiJIUzUxMiIsInYiOiIyLjAiLCJraWQiOiJiMjVkYzQ3OS1iYjAxLTQxOGMtYjUzMC02NGUzMzZmZTA3YmUifQ.eyJ2ZXIiOjcsImF1aWQiOiI1Yzg0NjljMmNmNTRhMDNjZTc4NTQxOGNhOGVmYTFjNCIsImNvZGUiOiJpTFdBSHptYnVXX2tWNXZjZ1RFUmdpNlFzdUtobkhzX3ciLCJpc3MiOiJ6bTpjaWQ6Mk9vNEFvcXRSaXFNdTZiSjlHSWtRdyIsImdubyI6MCwidHlwZSI6MCwidGlkIjowLCJhdWQiOiJodHRwczovL29hdXRoLnpvb20udXMiLCJ1aWQiOiJrVjV2Y2dURVJnaTZRc3VLaG5Ic193IiwibmJmIjoxNjU4MTk0OTI1LCJleHAiOjE2NTgxOTg1MjUsImlhdCI6MTY1ODE5NDkyNSwiYWlkIjoiWE84azhod01RZWFGYU5IX29XMjVVQSIsImp0aSI6ImM4Y2M5MWJjLTcwOTYtNDBmNC1hZGRmLWNkZjZkZjk2YzA5YiJ9.1QZ2JbqmOFkM6sa2-9pb7JZp0FOES5p_BlPhDPTm9E06IffYJ6UGoJZQhIgkHwuVVTCs2CPXNZ57r64uOkOT2w";
-        private const string refreshToken = "eyJhbGciOiJIUzUxMiIsInYiOiIyLjAiLCJraWQiOiI5ZDZlMWVlNi0xZmI2LTQ5ZjctOWFmYi0xNjRjZWM2YWVlYmIifQ.eyJ2ZXIiOjcsImF1aWQiOiI1Yzg0NjljMmNmNTRhMDNjZTc4NTQxOGNhOGVmYTFjNCIsImNvZGUiOiJpTFdBSHptYnVXX2tWNXZjZ1RFUmdpNlFzdUtobkhzX3ciLCJpc3MiOiJ6bTpjaWQ6Mk9vNEFvcXRSaXFNdTZiSjlHSWtRdyIsImdubyI6MCwidHlwZSI6MSwidGlkIjowLCJhdWQiOiJodHRwczovL29hdXRoLnpvb20udXMiLCJ1aWQiOiJrVjV2Y2dURVJnaTZRc3VLaG5Ic193IiwibmJmIjoxNjU4MTk0OTI1LCJleHAiOjIxMzEyMzQ5MjUsImlhdCI6MTY1ODE5NDkyNSwiYWlkIjoiWE84azhod01RZWFGYU5IX29XMjVVQSIsImp0aSI6IjQzYTk1NmZjLThlZWMtNDg2MS1hMGJhLTMxZTgxOTQyNjFkYyJ9.x3iICQypd1A6hHS2k_8mmhXrtqJxoP2ErriJNX_7jwzxuEkdi2el-t5RRn95DOSoEcxmhrH9cfkX3tzWF8aisw";
+        private const string accessToken = "eyJhbGciOiJIUzUxMiIsInYiOiIyLjAiLCJraWQiOiJiZDdkYzUwNi01NmJiLTRkNGEtYjdiZS1kYmJjZWY3M2E2NTEifQ.eyJ2ZXIiOjcsImF1aWQiOiI1Yzg0NjljMmNmNTRhMDNjZTc4NTQxOGNhOGVmYTFjNCIsImNvZGUiOiJZMG5sSDVQMU5QX2tWNXZjZ1RFUmdpNlFzdUtobkhzX3ciLCJpc3MiOiJ6bTpjaWQ6Mk9vNEFvcXRSaXFNdTZiSjlHSWtRdyIsImdubyI6MCwidHlwZSI6MCwidGlkIjowLCJhdWQiOiJodHRwczovL29hdXRoLnpvb20udXMiLCJ1aWQiOiJrVjV2Y2dURVJnaTZRc3VLaG5Ic193IiwibmJmIjoxNjU4Mjc4MDk2LCJleHAiOjE2NTgyODE2OTYsImlhdCI6MTY1ODI3ODA5NiwiYWlkIjoiWE84azhod01RZWFGYU5IX29XMjVVQSIsImp0aSI6IjgyZmE0ZjIzLTAxM2UtNGRjMC05MGZlLTNjOGEyNGVjMDE2ZiJ9._PbprLwt2B5ePxRWGt3ratAkTxi0XiCjY3JaQCh-xeG4658CdQY8mzGhS4CKU2sFskVviWlO6YbP4C4ocO6Bog";
+        private const string refreshToken = "eyJhbGciOiJIUzUxMiIsInYiOiIyLjAiLCJraWQiOiI4ZGE2YjYyMC00M2UwLTQwODItOTA1Ny1jMDE5N2Q0MTZiMDIifQ.eyJ2ZXIiOjcsImF1aWQiOiI1Yzg0NjljMmNmNTRhMDNjZTc4NTQxOGNhOGVmYTFjNCIsImNvZGUiOiJZMG5sSDVQMU5QX2tWNXZjZ1RFUmdpNlFzdUtobkhzX3ciLCJpc3MiOiJ6bTpjaWQ6Mk9vNEFvcXRSaXFNdTZiSjlHSWtRdyIsImdubyI6MCwidHlwZSI6MSwidGlkIjowLCJhdWQiOiJodHRwczovL29hdXRoLnpvb20udXMiLCJ1aWQiOiJrVjV2Y2dURVJnaTZRc3VLaG5Ic193IiwibmJmIjoxNjU4Mjc4MDk2LCJleHAiOjIxMzEzMTgwOTYsImlhdCI6MTY1ODI3ODA5NiwiYWlkIjoiWE84azhod01RZWFGYU5IX29XMjVVQSIsImp0aSI6IjhmNjUzYTQwLTNhMzctNDVhMi1iYjE0LWJlYTRjZjMwYTI0NiJ9.arSp6DClaeDFbs_KnDRd32xLjBbtHFb0wKkp7Kq7CGlRVwgOVsCkz0mYRd4kZk6lhW8wlkZGqM1YiyOPbIeeIA";
 
         static void Main(string[] args)
         {
@@ -29,7 +29,16 @@ namespace CloudForensics
             //Console.WriteLine($"{user}");
             //for (int i = 0; i < meetings.Count; i++) { Console.WriteLine($"{meetings[i]}"); }
             //for (int i = 0; i < pastMeetings.Count; i++) { Console.WriteLine($"{pastMeetings[i]}"); }
-            for (int i = 0; i < recordings.Count; i++) { Console.WriteLine($"{recordings[i]}"); }
+            //for (int i = 0; i < recordings.Count; i++) { Console.WriteLine($"{recordings[i]}"); }
+            for (int i = 0; i < recordings.Count; i++)
+            {
+                Console.WriteLine($"{recordings[i]}");
+                for (int j = 0; j < recordings[i].RecordingFiles.Length; j++)
+                {
+                    Console.WriteLine($"{recordings[i].RecordingFiles[j]}");
+                    System.Diagnostics.Process.Start(recordings[i].RecordingFiles[j].DownloadUrl);
+                }
+            }
             /*for (int i = 0; i < chatList.Count; i++)
             {
                 Console.WriteLine($"{chatList[i]}");
@@ -41,7 +50,7 @@ namespace CloudForensics
                 {
                     Console.WriteLine($"{chatList[i].ChatMsgs[j]}");
                 }
-            }
+            }*/
 
             Console.ReadKey();
         }
