@@ -233,7 +233,7 @@ namespace CloudForensics
                         else if (recording.RecordingFiles[i].FileType == RecordingFileType.Chat) fileName = fileName + ".txt";
                         else
                         {
-                            Console.WriteLine("Wrong file type");
+                            Console.WriteLine($"Unsupported file format : {recording.RecordingFiles[i].FileType}");
                             return false;
                         }
 
