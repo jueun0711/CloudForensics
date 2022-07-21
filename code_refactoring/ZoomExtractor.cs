@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using ZoomNet;
 using ZoomNet.Models;
 using CloudForensics.ZoomModel;
+using System.IO;
 
 namespace CloudForensics
 {
@@ -158,11 +159,9 @@ namespace CloudForensics
                     zr.TotalSize = recording.Records[i].TotalSize;
                     zr.FilesCount = recording.Records[i].FilesCount;
                     zr.RecordingFiles = GetRecordingFiles(recording.Records[i].RecordingFiles);
-                    //zr.RecordingFiles = recording.Records[i].RecordingFiles;
                     zr.ShareUrl = recording.Records[i].ShareUrl;
                     zr.Password = recording.Records[i].Password;
                     zr.ParticipantAudioFiles = GetRecordingFiles(recording.Records[i].ParticipantAudioFiles);
-                    //zr.ParticipantAudioFiles = recording.Records[i].ParticipantAudioFiles;
                     
                     zrList.Add(zr);
                 }
@@ -203,6 +202,57 @@ namespace CloudForensics
             {
                 return new ZoomRecordingFile[0];
             }
+        }
+
+        public async Task<bool> DownloadRecordings(ZoomRecording recording, string downloadPath)
+        {
+            var folderPath = downloadPath + "/ZoomRecordings";
+            var filePath = folderPath + "/[" + recording.StartTime.ToString("yy.MM.dd") + "] " + recording.Topic; //+ recording.StartTime.ToString("s");
+
+            try
+            {
+                if (!Directory.Exists(folderPath))
+                {
+                    System.IO.Directory.CreateDirectory(folderPath);
+                }
+
+                if (!Directory.Exists(filePath))
+                {
+                    System.IO.Directory.CreateDirectory(filePath);
+                }
+
+                using (var client = new ZoomClient(connectionInfo))
+                {
+                    for(int i=0; i<recording.FilesCount; i++)
+                    {
+                        Stream stream = await client.CloudRecordings.DownloadFileAsync(recording.RecordingFiles[i].DownloadUrl);
+                        var fileName = "/[" + recording.RecordingFiles[i].StartTime.ToString("HH.mm.ss") + "]" + recording.RecordingFiles[i].FileType;
+
+                        if (recording.RecordingFiles[i].FileType == RecordingFileType.Video) fileName = fileName + ".mp4";
+                        else if (recording.RecordingFiles[i].FileType == RecordingFileType.Audio) fileName = fileName + ".m4a";
+                        else if (recording.RecordingFiles[i].FileType == RecordingFileType.Chat) fileName = fileName + ".txt";
+                        else
+                        {
+                            Console.WriteLine("Wrong file type");
+                            return false;
+                        }
+
+                        using (var fileStream = new FileStream(filePath + "/" +  fileName, FileMode.Create, FileAccess.Write))
+                        {
+                            stream.CopyTo(fileStream);
+                        }
+                    }
+                }
+
+                return true;
+            }
+            catch (InvalidOperationException ioex)
+            {
+                Console.WriteLine(ioex.Message);
+
+                return false;
+            }
+            
         }
 
         public async Task<List<ZoomChat>> GetChatList(string from)
