@@ -226,7 +226,7 @@ namespace CloudForensics
                     for(int i=0; i<recording.FilesCount; i++)
                     {
                         Stream stream = await client.CloudRecordings.DownloadFileAsync(recording.RecordingFiles[i].DownloadUrl);
-                        var fileName = "/[" + recording.RecordingFiles[i].StartTime.ToString("HH.mm.ss") + "]" + recording.RecordingFiles[i].FileType;
+                        var fileName = "/[" + recording.RecordingFiles[i].StartTime.ToString("HH.mm.ss") + "] " + recording.RecordingFiles[i].FileType;
 
                         if (recording.RecordingFiles[i].FileType == RecordingFileType.Video) fileName = fileName + ".mp4";
                         else if (recording.RecordingFiles[i].FileType == RecordingFileType.Audio) fileName = fileName + ".m4a";
