@@ -5,7 +5,6 @@ namespace CloudForensics.ZoomModel
 {
     public class ZoomRecordingFile
     {
-
 		public string Id { get; set; }
 
 		public string MeetingId { get; set; }
